@@ -1,6 +1,7 @@
-def upload_to_dropbox(outfile, hostname='nersc'):
-    command = '/global/homes/j/jmyles/repositories/Dropbox-Uploader/dropbox_uploader.sh upload {0} {1}/{2}/{3}'
-    os.system(command.format(outfile,
+def upload_to_dropbox(outfile, hostname='nersc', repo_dir='/global/homes/j/jmyles/repositories/'):
+    command = '{0}Dropbox-Uploader/dropbox_uploader.sh upload {1} {2}/{3}/{4}'
+    os.system(command.format(repo_dir,
+                             outfile,
                              str(datetime.datetime.today())[:10],
                              hostname,
                              outfile.split('/')[-1]))
